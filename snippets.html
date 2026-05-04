@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="snippets.css">
+    <link rel="shortcut icon" href="ch.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="container">
+        <a href="index.html"><h1 class="logo">CODER'S HUB</h1></a>
+        <span class="back" onclick="goBack()">Back</span>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Code Snippet Library</h2>
+                <p>A growing collection of useful code snippets contributed by the community. Share and save your own!</p>
+                <a href="submit.html" class="submit-btn">Submit a Snippet</a>
+            </div>
+        </section>
+
+        <section class="code-snippets-section container">
+            <div class="snippet-cards">
+                <div class="snippet-card">
+                    <div class="card-header">
+                        <h3>Sum of Two</h3>
+                        <span>Language: Java</span>
+                    </div>
+                    <p class="card-description">A simple way to get sum of two numbers.</p>
+                    
+                    <pre><code class="language-java">
+public class SumOfTwoNumbers {
+    public static void main(String[] args) {
+        // Declare and initialize two integer variables
+        int num1 = 15, num2 = 25;
+
+        // Calculate the sum
+        int sum = num1 + num2;
+
+        // Print the result
+        System.out.println("The sum of "+ num1 +" and "+ num2 +" is: "+ sum);
+    }
+}
+                    </code></pre>
+                </div>
+                
+                <div class="snippet-card">
+                    <div class="card-header">
+                        <h3>Reverse a String in C++</h3>
+                        <span>Language: C++</span>
+                    </div>
+                    <p class="card-description">A basic function to reverse a string using the std::reverse function.</p>
+
+                    <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+int add(int, int);
+int main()
+{
+    int a = 5, b = 6, sum;
+    sum = add(a, b);
+    cout &lt;&lt; sum;
+    return 0;
+}
+                    </code>
+                    </pre>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer >
+            <div class="footpanel">
+                <div class="contact foot">
+                <ul>
+                    <p><b>Contact Info</b></p>
+                    <a><li><strong>Email: </strong><a href="https://mail.google.com" target="_blank">kunubiswas2@gmail.com</a> </li></a>
+                    <a><li><strong>Phone: </strong> 7853041763</li></a>
+                    <a><li><strong>Address: </strong> Above Ground</li></a>
+
+                </ul>
+                </div>
+
+                <div class="socials foot">
+                <ul>
+                    <p><b>Socials</b></p>
+                    <li><strong>Instagram:</strong> N/A</li>
+                    <li><strong>Facebook:</strong> N/A</li>
+                    <li><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/biswash-rath-25a871379" target="_blank">Biswash Rath</a></li>
+                </ul>
+                </div>
+                        
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Paths - Coder's Hub</title>
+    <link rel="stylesheet" href="learningpath.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="ch.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="container">
+        <a href="index.html"><h1 class="logo">CODER'S HUB</h1></a>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="search-bar" placeholder="Search">
+        </div>
+        <span class="back" onclick="goBack()">Back</span>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Explore Learning Paths</h2>
+                <p>Choose your journey and follow a structured roadmap to master a new skill.</p>
+            </div>
+        </section>
+
+        <section class="learning-paths-section container">
+            <div class="path-cards" id="pathContainer"></div>
+        </section>
+
+    </main>
+    <div id="roadmapModal" class="roadmap-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeRoadmap()">&times;</span>
+            <h2 id="modalTitle" style="color: #4CAF50;"></h2>
+            <div id="modalBody" class="roadmap-steps"></div>
+        </div>
+    </div>
+
+    <footer >
+            <div class="footpanel">
+                <div class="contact foot">
+                <ul>
+                    <p><b>Contact Info</b></p>
+                    <a><li><strong>Email: </strong><a href="https://mail.google.com" target="_blank">kunubiswas2@gmail.com</a> </li></a>
+                    <a><li><strong>Phone: </strong> 7853041763</li></a>
+                    <a><li><strong>Address: </strong> Above Ground</li></a>
+
+                </ul>
+                </div>
+
+                <div class="socials foot">
+                <ul>
+                    <p><b>Socials</b></p>
+                    <li><strong>Instagram:</strong> N/A</li>
+                    <li><strong>Facebook:</strong> N/A</li>
+                    <li><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/biswash-rath-25a871379" target="_blank">Biswash Rath</a></li>
+                </ul>
+                </div>
+                        
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

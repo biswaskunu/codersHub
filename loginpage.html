@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>LoginPage</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <link rel="stylesheet" href="log.css">
+</head>
+<body>
+                <div class="formbox">
+                                <div class="button-box">
+                                                <div id="btn"></div>
+                                                <button type="button" class="change-btn" onclick="login() "><p>LogIn</p></button>
+                                                <button type="button" class="change-btn" onclick="register()"><p>Register</p></button>
+                                </div>
+
+                                <div class="social">
+                                                <a><i class="fa-brands fa-google"></i></a>
+                                                <a><i class="fa-brands fa-facebook"></i></a>
+                                                <a><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+
+                                <form id="login" class="logindata">
+                                                <input type="text" class="name-pass" placeholder="Enter username">
+                                                <input type="password" class="name-pass" placeholder="Password">
+                                                <div class="remmeber-pass">
+                                                                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                                                </div>
+                                                <button type="submit" class="submit-btn">Submit</button>
+                                </form>
+
+                                <form id="Register" class="logindata">
+                                                <input type="text" class="name-pass" placeholder="Enter username">
+                                                <input type="email" class="name-pass" placeholder="Email Id">
+                                                <input type="password" class="name-pass" placeholder="Password">
+                                                <div class="terms">
+                                                                <input type="checkbox" class="check-box"><span>I Agree To The Terms and Conditions</span>
+                                                </div>
+                                                <button type="submit" class="submit-btn">Register</button>
+                                </form>
+                </div>
+                <script src="script.js"></script>
+</html>

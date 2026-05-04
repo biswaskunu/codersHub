@@ -1,0 +1,162 @@
+*{
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+                color: #d8dbe2;
+}
+body{
+                height: 100vh;
+                background: #1b1b1e;
+                display: flex;
+}
+a{
+                text-decoration: none;
+}
+
+/* login page */
+
+
+.formbox{
+                display: flex;
+                flex-direction: column;
+                height: 38rem;
+                width: 31rem;
+                min-width: 390px;
+                margin: auto;
+                background-color:#c7def2;
+                padding: 5px;
+                box-shadow: 0 0 10px #a9bcd062;
+                overflow: hidden;
+                border-radius: 10px;
+                filter: blur();
+                
+}
+.formbox:hover{
+                box-shadow: 0 0 40px #a9bcd062;
+}
+
+.button-box{
+                display: flex;
+                width: 20rem;
+                margin: 30px auto;
+                position: relative;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.092);
+                border-radius: 30px;
+                color: #222f3d;
+                background-color: rgba(69, 112, 149, 0.876);
+}
+.change-btn{
+                width: 10rem;
+                padding: 10px 30px;
+                margin-left:3px ;
+                cursor: pointer;
+                background: transparent;
+                position: relative;
+                border: 0;
+                outline: none;
+}
+.change-btn p{
+                /* margin-left: 1rem; */
+                font-size: 0.9rem;
+                font-weight: 700;
+}
+#btn{
+                position: absolute;
+                width: 11rem;
+                height: 100%;
+                background: linear-gradient(to bottom right,#52c7d8,#3093a2);
+                border-radius: 30px;
+                transition: .5s;
+}
+.social{
+                height: 40px;
+                width: 300px;
+                padding: 5px 5px auto;
+                margin: 3% auto;
+                align-items: center;
+                display: flex;
+                justify-content: space-evenly;
+}
+.social i{
+                font-size: 3rem;
+                padding: 2px 2px auto;
+                border-radius: 20%;
+                cursor: pointer;
+                color: #353f51;
+}
+.logindata{
+                top: 15rem;
+                left: 10rem;
+                right: 10rem;
+                width: 70%;
+                position: absolute;
+                transition: .5s;
+                display: flex;
+                flex-direction: column;
+                /* padding: 5px 5px; */
+}
+.name-pass{
+                width: 100%;
+                padding: 1rem 5px;
+                margin: 5px 0;
+                border-radius: 3px;
+                color: #1b1b1e;
+                font-weight: 550;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 1.5px solid #a89f9f;
+                outline: none;
+                background: transparent;
+                font-size: 1.2em;
+                transition: 0.5s;
+}
+.name-pass:focus{
+                border-bottom: 2px solid #3e697a;
+}
+.check-box{
+                margin: 30px 10px;
+}
+span{
+                color: #1b1b1e;
+                font-size: 1.2rem;
+                font-weight: 500;
+                align-items: center;
+}
+.remmeber-pass{
+                display: flex;
+                align-items: center;
+}
+.terms{
+                display: flex;
+                width: 30rem;
+                align-items: center;
+}
+
+.submit-btn{
+                width: 80%;
+                padding: 10px 30px;
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                background: linear-gradient(to bottom right,#52c7d8,#3093a2);
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.196);
+                border: 0;
+                outline: none;
+                border-radius: 30px;
+                font-size: 1rem;
+                color: #222f3d;
+}
+#login{
+                left: 5em;
+                display: block;
+                
+}
+.terms{
+                align-items: center;
+}
+#Register{
+                left: 5em;
+                display: none;
+                
+}
