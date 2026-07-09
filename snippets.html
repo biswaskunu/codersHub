@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coder's Hub</title>
     <link rel="stylesheet" href="snippets.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="ch.png" type="image/x-icon">
 </head>
 <body>
@@ -23,54 +24,26 @@
             </div>
         </section>
 
+        <section class="snippet-controls container">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="snippetSearch" class="snippet-search-bar" placeholder="Search snippets by name, language or keyword...">
+            </div>
+            <div class="filter-chips" id="filterChips">
+                <button class="chip active" data-lang="All">All</button>
+                <button class="chip" data-lang="Java">Java</button>
+                <button class="chip" data-lang="C++">C++</button>
+                <button class="chip" data-lang="Python">Python</button>
+                <button class="chip" data-lang="JavaScript">JavaScript</button>
+                <button class="chip" data-lang="HTML">HTML</button>
+                <button class="chip" data-lang="CSS">CSS</button>
+                <button class="chip" data-lang="MySQL">MySQL</button>
+            </div>
+        </section>
+
         <section class="code-snippets-section container">
-            <div class="snippet-cards">
-                <div class="snippet-card">
-                    <div class="card-header">
-                        <h3>Sum of Two</h3>
-                        <span>Language: Java</span>
-                    </div>
-                    <p class="card-description">A simple way to get sum of two numbers.</p>
-                    
-                    <pre><code class="language-java">
-public class SumOfTwoNumbers {
-    public static void main(String[] args) {
-        // Declare and initialize two integer variables
-        int num1 = 15, num2 = 25;
-
-        // Calculate the sum
-        int sum = num1 + num2;
-
-        // Print the result
-        System.out.println("The sum of "+ num1 +" and "+ num2 +" is: "+ sum);
-    }
-}
-                    </code></pre>
-                </div>
-                
-                <div class="snippet-card">
-                    <div class="card-header">
-                        <h3>Reverse a String in C++</h3>
-                        <span>Language: C++</span>
-                    </div>
-                    <p class="card-description">A basic function to reverse a string using the std::reverse function.</p>
-
-                    <pre><code class="language-cpp">
-#include &lt;iostream&gt;
-using namespace std;
-int add(int, int);
-int main()
-{
-    int a = 5, b = 6, sum;
-    sum = add(a, b);
-    cout &lt;&lt; sum;
-    return 0;
-}
-                    </code>
-                    </pre>
-                </div>
-
-                </div>
+            <div class="snippet-cards" id="snippetContainer"></div>
+            <p id="noResults" class="no-results" style="display:none;">No snippets match your search.</p>
         </section>
     </main>
 
@@ -98,6 +71,7 @@ int main()
             </div>
     </footer>
 
+    <script src="snippets-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
