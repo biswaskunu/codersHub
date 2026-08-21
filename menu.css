@@ -26,7 +26,7 @@ a{
 /* Header & Nav */
 header {
     background-color: #1c1e22fd;
-    filter: blur();
+    backdrop-filter: blur(8px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.491);
     min-width: 100%;
     height: 5rem;
@@ -72,6 +72,10 @@ nav ul li a {
 nav ul li a:hover {
     color: #58a4b0;
     text-shadow: 0 0 10px #66bfcc;
+}
+
+#features, #about {
+    scroll-margin-top: 6rem;
 }
 
 /* back button */
@@ -200,4 +204,19 @@ nav ul li a:hover {
 }
 .foot{
     margin-bottom: 1em;
+}
+
+
+
+@media (max-width: 768px) {
+    header .container { flex-direction: column; height: auto; padding: 0.5rem 0; }
+    header { height: auto; position: static; } /* avoid content hiding under fixed header */
+    .logo { font-size: 2rem; padding: 0.5rem 1.5rem; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { padding: 0 1rem; }
+    .buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+    .secondary-btn { margin-left: 0; }
+    .feature-cards { flex-direction: column; }
+    .footpanel { flex-direction: column; height: auto; padding: 2rem 1rem; gap: 1.5rem; text-align: center; }
 }
