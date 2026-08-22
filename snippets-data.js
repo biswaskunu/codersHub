@@ -1,3 +1,5 @@
+// ---- Snippet Library Data ----
+// Each snippet: title, language, description, code (HTML-escaped string)
 const snippets = [
     {
         title: "Sum of Two Numbers",
@@ -328,7 +330,7 @@ print(freq.most_common(3))`
     }
 ];
 
-// rendering
+// ---- Rendering ----
 function escapeHTML(str) {
     return str
         .replace(/&/g, "&amp;")
@@ -349,7 +351,7 @@ function displaySnippets(data) {
     }
     noResults.style.display = "none";
 
-    data.forEach((snip, index) => {
+    data.forEach((snip) => {
         const card = document.createElement('div');
         card.className = 'snippet-card';
         card.innerHTML = `
@@ -358,49 +360,11 @@ function displaySnippets(data) {
                 <span>${escapeHTML(snip.language)}</span>
             </div>
             <p class="card-description">${escapeHTML(snip.description)}</p>
-            <div class="code-block">
-                <button class="copy-btn" data-index="${index}">
-                    <i class="fa-regular fa-copy"></i> Copy
-                </button>
-                <pre><code>${escapeHTML(snip.code)}</code></pre>
-            </div>
+            <pre><code>${escapeHTML(snip.code)}</code></pre>
         `;
-    container.appendChild(card);
-    });
-
-    container.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', () => copySnippet(btn, data));
-    });
-
-
-}
-
-function copySnippet(btn, data) {
-    const index = btn.dataset.index;
-    const code = data[index].code;
-
-    navigator.clipboard.writeText(code).then(() => {
-        const original = btn.innerHTML;
-        btn.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
-        btn.classList.add('copied');
-        setTimeout(() => {
-            btn.innerHTML = original;
-            btn.classList.remove('copied');
-        }, 1500);
-    }).catch(() => {
-        // fallback for older browsers / non-HTTPS contexts
-        const textarea = document.createElement('textarea');
-        textarea.value = code;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        btn.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
-        setTimeout(() => btn.innerHTML = `<i class="fa-regular fa-copy"></i> Copy`, 1500);
+        container.appendChild(card);
     });
 }
-
-
 
 let activeLang = "All";
 

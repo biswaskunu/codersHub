@@ -28,7 +28,7 @@ a{
                 box-shadow: 0 0 10px #a9bcd062;
                 overflow: hidden;
                 border-radius: 10px;
-                backdrop-filter: blur(8px);
+                filter: blur();
                 
 }
 .formbox:hover{
@@ -91,11 +91,9 @@ a{
                 width: 70%;
                 position: absolute;
                 transition: .5s;
-                display: none;
-                flex-direction: column;
-}
-.logindata.active{
                 display: flex;
+                flex-direction: column;
+                /* padding: 5px 5px; */
 }
 .name-pass{
                 width: 100%;
@@ -161,14 +159,4 @@ span{
                 left: 5em;
                 display: none;
                 
-}
-
-
-@media (max-width: 480px) {
-    .formbox { width: 95vw; min-width: unset; height: auto; padding: 1rem 0.5rem 2rem; }
-    .logindata { position: static; width: 90%; margin: 1rem auto; }
-    .button-box { width: 90%; }
-    .change-btn { width: 45%; padding: 10px 0; }
-    #btn { width: 47%; }
-    .social { width: 90%; }
 }

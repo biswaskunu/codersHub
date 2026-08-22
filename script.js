@@ -13,15 +13,9 @@ function login(){
                 z.style.left = "0";
                                
 }
-document.addEventListener('DOMContentLoaded', () => {
-    if (x) x.classList.add("active");
-});
-
-
 function goBack() {
                 window.history.back();
 }
-
 
 
 //Data List
@@ -316,20 +310,6 @@ searchBar.addEventListener('input', (e) => {
 });
 
 
-const snippetForm = document.getElementById('snippet-form');
-if (snippetForm) {
-    snippetForm.addEventListener('submit', e => {
-        e.preventDefault();
-        alert('Thanks! Snippet submission isn\'t wired up to a backend yet.');
-        snippetForm.reset();
-    });
-}
-[x, y].forEach(form => {
-    if (form) form.addEventListener('submit', e => e.preventDefault());
-});
 
-
-document.getElementById('login').addEventListener('submit', e => e.preventDefault());
-document.getElementById('Register').addEventListener('submit', e => e.preventDefault());
 
 // if u r reading this , just know that I suck at JS I spent 1hr debugging this garbage js code
