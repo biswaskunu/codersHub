@@ -46,7 +46,7 @@ header{
 
 /* back button */
 .back {
-    
+
     text-align: center;
     margin: auto 3em;
     cursor: pointer;
@@ -313,4 +313,43 @@ textarea {
 }
 .foot{
     margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .logo {
+        font-size: clamp(2rem, 10vw, 3rem);
+        padding: 0 1rem;
+        margin: 0;
+    }
+
+    .back {
+        margin: 0 1rem;
+    }
+
+    .page-header {
+        padding: 3rem 1rem;
+    }
+
+    .snippet-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .snippet-card .card-header,
+    .footpanel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .footpanel {
+        height: auto;
+        padding: 2rem 1rem;
+    }
 }
