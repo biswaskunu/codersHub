@@ -256,3 +256,43 @@ nav ul li a:hover {
         gap: 1rem;
     }
 }
+
+/* Mobile polish */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .logo {
+        max-height: none;
+        text-align: center;
+    }
+
+    nav ul {
+        width: 100%;
+        align-items: center;
+        margin: 0;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .buttons .btn {
+        width: min(100%, 18rem);
+    }
+
+    .feature-cards {
+        width: 100%;
+    }
+}

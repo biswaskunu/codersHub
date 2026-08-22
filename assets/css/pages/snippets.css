@@ -353,3 +353,45 @@ textarea {
         padding: 2rem 1rem;
     }
 }
+
+/* Mobile polish */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    header.container {
+        justify-content: center;
+    }
+
+    .page-header h2 {
+        font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .search {
+        padding: 0.7rem 1rem;
+    }
+
+    .filter-chips {
+        gap: 0.5rem;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+}

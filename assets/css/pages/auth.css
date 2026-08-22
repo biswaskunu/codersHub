@@ -188,3 +188,47 @@ span{
         left: 1rem;
     }
 }
+
+/* Mobile polish */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 420px) {
+    body {
+        align-items: flex-start;
+        padding: 1rem 0;
+    }
+
+    .formbox {
+        min-width: 0;
+        height: auto;
+        min-height: 36rem;
+    }
+
+    .social {
+        gap: 0.75rem;
+    }
+
+    .social i {
+        font-size: 2.25rem;
+    }
+
+    .name-pass {
+        width: 100%;
+    }
+
+    .remmeber-pass,
+    .terms {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}

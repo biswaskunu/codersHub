@@ -357,3 +357,51 @@ header{
         gap: 1rem;
     }
 }
+
+/* Mobile polish */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    header.container {
+        justify-content: center;
+    }
+
+    .page-header h2 {
+        font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .path-cards {
+        gap: 1rem;
+    }
+
+    .path-card {
+        min-width: 0;
+        padding: 1.25rem;
+    }
+
+    .modal-content {
+        width: calc(100% - 2rem);
+        max-height: 85vh;
+        padding: 1.25rem;
+    }
+
+    .roadmap-steps li {
+        align-items: flex-start;
+    }
+}

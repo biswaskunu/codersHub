@@ -214,3 +214,53 @@ header{
         margin: 1rem 0;
     }
 }
+
+/* Mobile polish */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+    .loadname p {
+        font-size: clamp(2.5rem, 14vw, 5rem);
+    }
+
+    @keyframes mysitename {
+        0% { opacity: 0; }
+        50% { opacity: 1; font-size: clamp(3rem, 18vw, 6rem); }
+        100% { opacity: 0; font-size: clamp(4rem, 22vw, 8rem); }
+    }
+
+    .page-top {
+        min-width: 0;
+    }
+
+    .sitename {
+        margin: 0;
+        padding: 0;
+        white-space: normal;
+    }
+
+    .signin button {
+        margin: 0;
+        width: min(80vw, 10rem);
+    }
+
+    .ajenda {
+        width: calc(100% - 2rem);
+        margin: 1rem auto;
+    }
+
+    .ajenda-text {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .start button {
+        width: min(85vw, 15rem);
+    }
+}
