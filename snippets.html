@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coder's Hub</title>
     <link rel="stylesheet" href="snippets.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="shortcut icon" href="ch.png" type="image/x-icon">
 </head>
 <body>
-
-    <header class="container">
-        <a href="index.html"><h1 class="logo">CODER'S HUB</h1></a>
-        <span class="back" onclick="goBack()">Back</span>
+    <header class="site-header container">
+        <a href="index.html" class="logo-link"><h1 class="logo">CODER'S HUB</h1></a>
+        <button type="button" class="back" onclick="goBack()">Back</button>
     </header>
 
     <main>
@@ -24,51 +23,49 @@
             </div>
         </section>
 
-        <section class="snippet-controls container">
+        <section class="snippet-controls container" aria-label="Snippet filters">
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="snippetSearch" class="snippet-search-bar" placeholder="Search snippets by name, language or keyword...">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" id="snippetSearch" class="snippet-search-bar" placeholder="Search snippets by name, language or keyword..." aria-label="Search snippets">
             </div>
+
             <div class="filter-chips" id="filterChips">
-                <button class="chip active" data-lang="All">All</button>
-                <button class="chip" data-lang="Java">Java</button>
-                <button class="chip" data-lang="C++">C++</button>
-                <button class="chip" data-lang="Python">Python</button>
-                <button class="chip" data-lang="JavaScript">JavaScript</button>
-                <button class="chip" data-lang="HTML">HTML</button>
-                <button class="chip" data-lang="CSS">CSS</button>
-                <button class="chip" data-lang="MySQL">MySQL</button>
+                <button type="button" class="chip active" data-lang="All">All</button>
+                <button type="button" class="chip" data-lang="Java">Java</button>
+                <button type="button" class="chip" data-lang="C++">C++</button>
+                <button type="button" class="chip" data-lang="Python">Python</button>
+                <button type="button" class="chip" data-lang="JavaScript">JavaScript</button>
+                <button type="button" class="chip" data-lang="HTML">HTML</button>
+                <button type="button" class="chip" data-lang="CSS">CSS</button>
+                <button type="button" class="chip" data-lang="MySQL">MySQL</button>
             </div>
         </section>
 
-        <section class="code-snippets-section container">
+        <section class="code-snippets-section container" aria-label="Code snippets">
             <div class="snippet-cards" id="snippetContainer"></div>
-            <p id="noResults" class="no-results" style="display:none;">No snippets match your search.</p>
+            <p id="noResults" class="no-results" hidden>No snippets match your search.</p>
         </section>
     </main>
 
-    <footer >
-            <div class="footpanel">
-                <div class="contact foot">
+    <footer>
+        <div class="footpanel">
+            <div class="contact foot">
                 <ul>
-                    <p><b>Contact Info</b></p>
-                    <a><li><strong>Email: </strong><a href="https://mail.google.com" target="_blank">kunubiswas2@gmail.com</a> </li></a>
-                    <a><li><strong>Phone: </strong> 7853041763</li></a>
-                    <a><li><strong>Address: </strong> Above Ground</li></a>
-
+                    <li class="footer-title">Contact Info</li>
+                    <li><strong>Email: </strong><a href="https://mail.google.com" target="_blank" rel="noopener noreferrer">kunubiswas2@gmail.com</a></li>
+                    <li><strong>Phone: </strong>7853041763</li>
+                    <li><strong>Address: </strong>Above Ground</li>
                 </ul>
-                </div>
-
-                <div class="socials foot">
+            </div>
+            <div class="socials foot">
                 <ul>
-                    <p><b>Socials</b></p>
+                    <li class="footer-title">Socials</li>
                     <li><strong>Instagram:</strong> N/A</li>
                     <li><strong>Facebook:</strong> N/A</li>
-                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/biswash-rath-25a871379/" target="_blank">Biswash Rath</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/biswash-rath-25a871379/" target="_blank" rel="noopener noreferrer">Biswash Rath</a></li>
                 </ul>
-                </div>
-                        
             </div>
+        </div>
     </footer>
 
     <script src="snippets-data.js"></script>

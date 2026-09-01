@@ -1,24 +1,8 @@
-var x = document.getElementById("login");
-var y = document.getElementById("Register");
-var z = document.getElementById("btn");
+/*
+ * CODER'S HUB — shared page behaviour.
+ * Tech stack remains vanilla HTML/CSS/JavaScript.
+ */
 
-function register(){
-                x.style.display = "none";
-                y.style.display = "block";
-                z.style.left = "9em";
-}
-function login(){
-                x.style.display = "block";
-                y.style.display = "none";
-                z.style.left = "0";
-                               
-}
-function goBack() {
-                window.history.back();
-}
-
-
-//Data List
 const roadmaps = [
     {
         id: 'web-dev',
@@ -246,70 +230,130 @@ const roadmaps = [
     }
 ];
 
+function goBack() {
+    window.history.back();
+}
+
+function register() {
+    const loginForm = document.getElementById('login');
+    const registerForm = document.getElementById('Register');
+    const indicator = document.getElementById('btn');
+
+    if (!loginForm || !registerForm || !indicator) return;
+
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'flex';
+    indicator.style.transform = 'translateX(100%)';
+}
+
+function login() {
+    const loginForm = document.getElementById('login');
+    const registerForm = document.getElementById('Register');
+    const indicator = document.getElementById('btn');
+
+    if (!loginForm || !registerForm || !indicator) return;
+
+    loginForm.style.display = 'flex';
+    registerForm.style.display = 'none';
+    indicator.style.transform = 'translateX(0)';
+}
+
 function displayCards(data = roadmaps) {
     const container = document.getElementById('pathContainer');
-    container.innerHTML = "";
+    if (!container) return;
+
+    container.replaceChildren();
 
     data.forEach((path) => {
-        const card = document.createElement('div');
+        const card = document.createElement('article');
         card.className = 'path-card';
 
-        //roadmap to show in the popup later
-        card.innerHTML = `
-            <h3>${path.title}</h3>
-            <p>${path.desc}</p>
-            <button class="path-btn" onclick="openRoadmap('${path.id}')">View Roadmap</button>
-        `;
+        const title = document.createElement('h3');
+        title.textContent = path.title;
 
+        const description = document.createElement('p');
+        description.textContent = path.desc;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'path-btn';
+        button.textContent = 'View Roadmap';
+        button.addEventListener('click', () => openRoadmap(path.id));
+
+        card.append(title, description, button);
         container.appendChild(card);
     });
 }
-document.addEventListener('DOMContentLoaded', () => displayCards());
 
 function openRoadmap(id) {
-    const roadmap = roadmaps.find(r => r.id === id);
+    const roadmap = roadmaps.find((item) => item.id === id);
     const modal = document.getElementById('roadmapModal');
     const title = document.getElementById('modalTitle');
     const body = document.getElementById('modalBody');
 
-    title.innerText = roadmap.title;
-    
-    // Convert steps array into list items
-    body.innerHTML = roadmap.steps.map((step, index) => `
-                <li>
-                                <span class="step-num">${index + 1}</span>
-                                <span class="step-text">${step}</span>
-                </li>
-                `).join('');
+    if (!roadmap || !modal || !title || !body) return;
+
+    title.textContent = roadmap.title;
+    body.replaceChildren();
+
+    roadmap.steps.forEach((step, index) => {
+        const item = document.createElement('li');
+
+        const number = document.createElement('span');
+        number.className = 'step-num';
+        number.textContent = String(index + 1);
+
+        const text = document.createElement('span');
+        text.className = 'step-text';
+        text.textContent = step;
+
+        item.append(number, text);
+        body.appendChild(item);
+    });
 
     modal.style.display = 'flex';
 }
 
 function closeRoadmap() {
-    document.getElementById('roadmapModal').style.display = 'none';
-}
-window.onclick = function(event) {
     const modal = document.getElementById('roadmapModal');
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (modal) modal.style.display = 'none';
+}
+
+function initLearningPaths() {
+    const container = document.getElementById('pathContainer');
+    const searchBar = document.querySelector('.search-bar');
+
+    if (!container) return;
+
+    displayCards();
+
+    if (searchBar) {
+        searchBar.addEventListener('input', (event) => {
+            const query = event.target.value.trim().toLowerCase();
+
+            const filteredRoadmaps = roadmaps.filter((path) =>
+                path.title.toLowerCase().includes(query) ||
+                path.desc.toLowerCase().includes(query)
+            );
+
+            displayCards(filteredRoadmaps);
+        });
     }
 }
 
-// search bar
-const searchBar = document.querySelector('.search-bar');
+function initLogin() {
+    if (!document.getElementById('login')) return;
+    login();
+}
 
-searchBar.addEventListener('input', (e) => {
-    const searchString = e.target.value.toLowerCase();
-    const filteredRoadmaps = roadmaps.filter((path) => {
-        return (
-            path.title.toLowerCase().includes(searchString) ||
-            path.desc.toLowerCase().includes(searchString)
-        );
-    });
-    displayCards(filteredRoadmaps);
+document.addEventListener('DOMContentLoaded', () => {
+    initLearningPaths();
+    initLogin();
 });
 
-
-
-
-// if u r reading this , just know that I suck at JS I spent 1hr debugging this garbage js code
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('roadmapModal');
+    if (modal && event.target === modal) {
+        closeRoadmap();
+    }
+});
