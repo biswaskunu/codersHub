@@ -1,0 +1,402 @@
+/* =========================================================
+   CODER'S HUB — Learning paths
+   ========================================================= */
+
+:root {
+    --bg: #0e0e0f;
+    --text: #e3e9f7;
+    --muted: #a0a0a0;
+    --cyan: #5dd2e4;
+    --cyan-dark: #58a4b0;
+    --green: #4caf50;
+    --card: #2b2b2b;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.learning-page .container {
+    width: min(1200px, calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+.learning-page .site-header {
+    width: 100%;
+    min-height: 5rem;
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) minmax(180px, 2fr) minmax(max-content, 1fr);
+    align-items: center;
+    gap: 1rem;
+    padding: .75rem max(1rem, 3vw);
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background: rgba(37, 41, 52, .96);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .49);
+}
+
+.learning-page .logo {
+    margin: 0;
+    color: var(--cyan);
+    font-size: clamp(1.45rem, 4vw, 3rem);
+    line-height: 1;
+    font-weight: 600;
+    text-shadow: 0 0 2px #65daec;
+}
+
+.learning-page .logo-link:hover .logo {
+    text-shadow: 0 0 5px #65daec;
+}
+
+.learning-page .search {
+    width: 80%;
+    max-width: 40rem;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .5rem .5rem;
+}
+
+.learning-page .search i {
+    color: var(--cyan);
+    font-size: 1.1rem;
+}
+
+.learning-page .search-bar {
+    width: 100%;
+    min-width: 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    padding: .65rem .75rem;
+    color: #111;
+    background: #d8dbe2;
+    font-size: 1rem;
+}
+
+.learning-page .search-bar:focus {
+    border-color: var(--cyan-dark);
+    box-shadow: 0 0 10px rgba(88, 164, 176, .45);
+}
+
+.learning-page .back {
+    justify-self: end;
+    border: 0;
+    padding: .5rem;
+    color: #fff;
+    background: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color .3s ease, text-shadow .3s ease;
+}
+
+.learning-page .back:hover {
+    color: var(--cyan-dark);
+    text-shadow: 0 0 10px #66bfcc;
+}
+
+.learning-page .page-header {
+    padding: 10rem 1rem 6rem;
+    text-align: center;
+    background: var(--card);
+    border-bottom: 2px solid var(--green);
+    margin-bottom: 2rem;
+}
+
+.learning-page .page-header h2 {
+    margin: 0 0 .75rem;
+    color: #fff;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.1;
+}
+
+.learning-page .page-header p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+}
+
+.learning-page .learning-paths-section {
+    padding: 1.25rem 0 2rem;
+}
+
+.learning-page .path-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem;
+}
+
+.learning-page .path-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, .03);
+    border-radius: 10px;
+    background: rgba(43, 43, 43, .81);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .3);
+    text-align: center;
+    animation: reveal .6s ease-out both;
+}
+
+.learning-page .path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .82);
+    background: var(--card);
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.learning-page .path-card h3 {
+    margin: 0;
+    color: var(--green);
+    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    line-height: 1.2;
+}
+
+.learning-page .path-card p {
+    flex: 1;
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.learning-page .path-btn {
+    align-self: center;
+    border: 0;
+    border-radius: 50px;
+    padding: .7rem 1.25rem;
+    color: #fff;
+    background: var(--green);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .3s ease, transform .3s ease;
+}
+
+.learning-page .path-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.learning-page .roadmap-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 1rem;
+    background: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.learning-page .roadmap-modal.open {
+    display: flex;
+}
+
+.learning-page .modal-content {
+    width: min(600px, 100%);
+    max-height: min(80vh, 700px);
+    overflow-y: auto;
+    position: relative;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border: 1px solid var(--green);
+    border-radius: 15px;
+    background: #1e1e20;
+    box-shadow: 0 0 20px rgba(76, 175, 80, .3);
+}
+
+.learning-page .modal-content h2 {
+    margin: 0;
+    padding-right: 2.5rem;
+    color: var(--green);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+.learning-page .close-modal {
+    position: absolute;
+    top: .75rem;
+    right: .9rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.learning-page .close-modal:hover {
+    color: var(--green);
+}
+
+.learning-page .roadmap-steps {
+    display: grid;
+    gap: .75rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.learning-page .roadmap-steps li {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    min-width: 0;
+    padding: .9rem;
+    border-radius: 8px;
+    background: #252526;
+}
+
+.learning-page .step-num {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--green);
+    font-weight: 700;
+}
+
+.learning-page .step-text {
+    min-width: 0;
+    line-height: 1.4;
+}
+
+.learning-page .footpanel {
+    min-height: 15rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    margin-top: 5rem;
+    background: var(--card);
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+.learning-page .foot ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.learning-page .foot li {
+    margin: .65rem 0;
+}
+
+.learning-page .footer-title {
+    font-weight: 700;
+}
+
+.learning-page .foot a {
+    color: var(--cyan);
+}
+
+@media (max-width: 850px) {
+    .learning-page .site-header {
+        grid-template-columns: 1fr auto;
+    }
+
+    .learning-page .search {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        max-width: none;
+    }
+
+    .learning-page .site-header {
+        padding-bottom: .75rem;
+    }
+
+    .learning-page .page-header {
+        padding-top: 11.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .learning-page .container {
+        width: min(100% - 1.25rem, 1200px);
+    }
+
+    .learning-page .site-header {
+        grid-template-columns: minmax(0, 1fr) auto;
+        min-height: 0;
+    }
+
+    .learning-page .logo {
+        font-size: 1.4rem;
+    }
+
+    .learning-page .search {
+        padding: .55rem .8rem;
+    }
+
+    .learning-page .page-header {
+        padding: 10rem .75rem 4rem;
+    }
+
+    .learning-page .learning-paths-section {
+        padding-top: .5rem;
+    }
+
+    .learning-page .path-card {
+        padding: 1.5rem;
+    }
+
+    .learning-page .footpanel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        min-height: auto;
+        padding: 2.5rem max(1rem, 5vw);
+    }
+}

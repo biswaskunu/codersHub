@@ -1,0 +1,367 @@
+/* =========================================================
+   CODER'S HUB — Snippet library
+   ========================================================= */
+
+:root {
+    --bg: #0e0e0f;
+    --text: #e3e9f7;
+    --muted: #a0a0a0;
+    --cyan: #5dd2e4;
+    --green: #4caf50;
+    --card: #2b2b2b;
+    --code-bg: #1e1e1e;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.snippets-page .container {
+    width: min(1200px, calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+.snippets-page .site-header {
+    min-height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .75rem max(1rem, 3vw);
+    background: rgba(37, 41, 52, .96);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .49);
+}
+
+.snippets-page .logo {
+    margin: 0;
+    color: var(--cyan);
+    font-size: clamp(1.45rem, 4vw, 3rem);
+    line-height: 1;
+    font-weight: 600;
+    text-shadow: 0 0 2px #65daec;
+}
+
+.snippets-page .logo-link:hover .logo {
+    text-shadow: 0 0 5px #65daec;
+}
+
+.snippets-page .back {
+    flex: 0 0 auto;
+    border: 0;
+    padding: .5rem;
+    color: #fff;
+    background: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color .3s ease, text-shadow .3s ease;
+}
+
+.snippets-page .back:hover {
+    color: #58a4b0;
+    text-shadow: 0 0 10px #66bfcc;
+}
+
+.snippets-page .page-header {
+    margin: 2rem 0;
+    padding: clamp(3rem, 8vw, 5rem) 1rem;
+    text-align: center;
+    background: var(--card);
+    border-bottom: 2px solid var(--green);
+}
+
+.snippets-page .page-header h2 {
+    margin: 0 0 .75rem;
+    color: #fff;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.1;
+}
+
+.snippets-page .page-header p {
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+    color: #ccc;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+}
+
+.snippets-page .submit-btn {
+    display: inline-block;
+    width: min(20rem, 100%);
+    padding: .75rem 1.25rem;
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+    background: var(--green);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .3s ease, transform .3s ease;
+}
+
+.snippets-page .submit-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.snippets-page .snippet-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.snippets-page .search {
+    width: min(40rem, 100%);
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .7rem 1.1rem;
+    border: 1px solid #444;
+    border-radius: 50px;
+    background: var(--code-bg);
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.snippets-page .search:focus-within {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, .3);
+}
+
+.snippets-page .search i {
+    flex: 0 0 auto;
+    color: var(--green);
+}
+
+.snippets-page .snippet-search-bar {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    color: #f0f0f0;
+    background: transparent;
+    font-size: 1rem;
+}
+
+.snippets-page .snippet-search-bar::placeholder {
+    color: #888;
+}
+
+.snippets-page .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem;
+}
+
+.snippets-page .chip {
+    border: 1px solid #444;
+    border-radius: 50px;
+    padding: .45rem 1rem;
+    color: #ccc;
+    background: var(--code-bg);
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .25s ease, color .25s ease, background .25s ease;
+}
+
+.snippets-page .chip:hover {
+    border-color: var(--green);
+    color: #fff;
+}
+
+.snippets-page .chip.active {
+    border-color: var(--green);
+    color: #fff;
+    background: var(--green);
+}
+
+.snippets-page .no-results {
+    margin: 0;
+    padding: 3rem 0;
+    color: #999;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.snippets-page .code-snippets-section {
+    padding: 1.25rem 0 3.75rem;
+}
+
+.snippets-page .snippet-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 1.5rem;
+}
+
+.snippets-page .snippet-card {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: var(--card);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .3);
+}
+
+.snippets-page .snippet-card .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-bottom: .75rem;
+}
+
+.snippets-page .snippet-card h3 {
+    min-width: 0;
+    margin: 0;
+    color: var(--green);
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    line-height: 1.25;
+}
+
+.snippets-page .snippet-card span {
+    flex: 0 0 auto;
+    padding: .2rem .5rem;
+    border-radius: 5px;
+    color: #fff;
+    background: var(--green);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.snippets-page .card-description {
+    margin: 0 0 .9rem;
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+pre {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 5px;
+    background: var(--code-bg);
+    color: #d4d4d4;
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: .88rem;
+    line-height: 1.5;
+    tab-size: 4;
+}
+
+code {
+    font: inherit;
+    white-space: pre;
+}
+
+.snippets-page .footpanel {
+    min-height: 15rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    margin-top: 5rem;
+    background: var(--card);
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+.snippets-page .foot ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.snippets-page .foot li {
+    margin: .65rem 0;
+}
+
+.snippets-page .footer-title {
+    font-weight: 700;
+}
+
+.snippets-page .foot a {
+    color: var(--cyan);
+}
+
+@media (max-width: 650px) {
+    .snippets-page .container {
+        width: min(100% - 1.25rem, 1200px);
+    }
+
+    .snippets-page .site-header {
+        min-height: 4.5rem;
+        padding-inline: .75rem;
+    }
+
+    .snippets-page .logo {
+        font-size: 1.35rem;
+    }
+
+    .snippets-page .page-header {
+        margin-top: 1rem;
+        padding-block: 3rem;
+    }
+
+    .snippets-page .snippet-card .card-header {
+        align-items: flex-start;
+    }
+
+    .snippets-page .footpanel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        min-height: auto;
+        padding: 2.5rem max(1rem, 5vw);
+    }
+}
+
+@media (max-width: 420px) {
+    .snippets-page .filter-chips {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .snippets-page .chip {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .snippets-page .snippet-card {
+        padding: 1rem;
+    }
+
+    .snippets-page .snippet-card .card-header {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,254 @@
+/* =========================================================
+   CODER'S HUB — Landing page
+   Responsive from small phones to large desktop screens.
+   ========================================================= */
+
+:root {
+    --bg: #0e0e0f;
+    --text: #e3e9f7;
+    --muted: #aeb6c5;
+    --cyan: #65daec;
+    --cyan-dark: #58a4b0;
+    --panel: #2529343c;
+    --green: rgb(72, 208, 149);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@keyframes mymove {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes mysitename {
+    0% {
+        opacity: 0;
+        transform: scale(.65);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.25);
+    }
+}
+
+.landing .loadname {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.landing .loadname p {
+    margin: 0;
+    padding-inline: 1rem;
+    text-align: center;
+    font-size: clamp(2.25rem, 9vw, 10rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--cyan);
+    text-shadow: 0 0 2px var(--cyan);
+    animation: mysitename 3.5s ease-in-out forwards;
+}
+
+.landing .site-header {
+    opacity: 0;
+    animation: mymove 3s ease 3s forwards;
+}
+
+.landing .page-top {
+    min-height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .75rem clamp(1rem, 5vw, 5rem);
+    background-color: var(--panel);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .49);
+}
+
+.landing .sitename {
+    min-width: 0;
+}
+
+.landing .sitename a {
+    color: var(--cyan);
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1;
+    text-shadow: 0 0 2px var(--cyan);
+    transition: text-shadow .3s ease;
+}
+
+.landing .sitename a:hover {
+    text-shadow: 0 0 5px var(--cyan);
+}
+
+.signin button,
+.landing .start button {
+    border: 2px solid rgba(88, 164, 176, .94);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+    background: rgba(88, 164, 176, .26);
+    cursor: pointer;
+    transition: background .3s ease, color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+
+.landing .signin button {
+    width: min(10rem, 30vw);
+    min-height: 3rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+}
+
+.signin button:hover,
+.landing .start button:hover {
+    box-shadow: 0 0 10px #66bfcc;
+    background: var(--cyan-dark);
+    color: #1b1b1e;
+    font-weight: 700;
+    transform: translateY(-2px);
+}
+
+.landing main {
+    width: 100%;
+}
+
+.landing .ajenda {
+    width: min(65rem, calc(100% - 2rem));
+    min-height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 4vw, 4rem);
+    margin: 2rem auto;
+    padding: clamp(1.25rem, 5vw, 5rem);
+    background-color: #373f5115;
+    border-radius: 2rem;
+    box-shadow: 0 0 40px #c1c4cc22;
+    opacity: 0;
+    animation: mymove 4s ease 3s forwards;
+}
+
+.landing .ajenda-text {
+    min-width: 0;
+    max-width: 42rem;
+    padding: 1rem;
+}
+
+.landing .ajenda-text p {
+    margin: 1rem auto;
+    padding: 0;
+    color: var(--green);
+    font-size: clamp(.95rem, 1.6vw, 1.2rem);
+    line-height: 1.6;
+}
+
+.landing .confusion {
+    flex: 0 0 clamp(220px, 30vw, 300px);
+    width: clamp(220px, 30vw, 300px);
+    aspect-ratio: 1.2 / 1;
+    background: url("/confusion.png") center / cover no-repeat;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+}
+
+.landing .start {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.landing .start button {
+    width: min(15rem, 90vw);
+    min-height: 4rem;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    opacity: 0;
+    animation: mymove 4s ease 3s forwards;
+}
+
+@media (max-width: 700px) {
+    .landing .page-top {
+        min-height: 4.5rem;
+        padding: .75rem 1rem;
+    }
+
+    .landing .signin button {
+        width: auto;
+        min-width: 5.5rem;
+        min-height: 2.6rem;
+    }
+
+    .landing .ajenda {
+        width: calc(100% - 1.5rem);
+        min-height: auto;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem 1rem;
+        border-radius: 1.25rem;
+    }
+
+    .landing .confusion {
+        flex-basis: auto;
+        width: min(100%, 280px);
+    }
+
+    .landing .ajenda-text {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .landing .page-top {
+        align-items: center;
+    }
+
+    .landing .sitename a {
+        font-size: 1.35rem;
+    }
+
+    .landing .signin button {
+        min-width: 4.8rem;
+        padding-inline: .7rem;
+        font-size: .9rem;
+    }
+}
