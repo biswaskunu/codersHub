@@ -298,6 +298,39 @@ a {
 
 .snippets-page .code-block pre {
     padding-top: 2.75rem;
+    padding-bottom: .9rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #3f7a44 transparent;
+}
+
+.snippets-page .code-block pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.snippets-page .code-block pre::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0 .5rem;
+}
+
+.snippets-page .code-block pre::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 999px;
+    border: 2px solid var(--code-bg);
+}
+
+.snippets-page .code-block pre::-webkit-scrollbar-thumb:hover {
+    background: var(--green);
+}
+
+.snippets-page .code-block pre::-webkit-scrollbar-thumb:active {
+    background: #45a049;
+}
+
+/* Fallback for the rare unscoped `pre` selector kept for legacy content */
+pre {
+    scrollbar-width: thin;
+    scrollbar-color: #3f7a44 transparent;
 }
 
 pre {

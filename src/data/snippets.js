@@ -1,5 +1,5 @@
 // Snippet library catalogue (migrated from legacy snippets-data.js).
-export const snippetLanguages = ['All', 'Java', 'C++', 'Python', 'JavaScript', 'HTML', 'CSS', 'MySQL'];
+export const snippetLanguages = ['All', 'Java', 'C++', 'C', 'Python', 'JavaScript', 'TypeScript', 'Go', 'Rust', 'HTML', 'CSS', 'MySQL'];
 
 export const snippets = [
   {
@@ -328,5 +328,168 @@ print(freq.most_common(3))`,
         console.log('Clicked:', e.target.textContent);
     }
 });`,
+  },
+  {
+    title: 'Hello, World!',
+    language: 'Python',
+    description: 'Your very first program: print a greeting to the screen.',
+    code: `print("Hello, World!")`,
+  },
+  {
+    title: 'Even or Odd',
+    language: 'JavaScript',
+    description: 'Beginner classic: check if a number is even or odd with %.',
+    code: `function evenOrOdd(n) {
+    return n % 2 === 0 ? "Even" : "Odd";
+}
+
+console.log(evenOrOdd(7)); // Odd
+console.log(evenOrOdd(10)); // Even`,
+  },
+  {
+    title: 'Factorial with a Loop',
+    language: 'C',
+    description: 'Learn loops and variables by computing 5! step by step.',
+    code: `#include <stdio.h>
+
+int main() {
+    int n = 5, fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    printf("Factorial: %d\\n", fact);
+    return 0;
+}`,
+  },
+  {
+    title: 'Greet Function with Types',
+    language: 'TypeScript',
+    description: 'A tiny typed function: see how TypeScript annotates params.',
+    code: `function greet(name: string): string {
+    return "Hello, " + name + "!";
+}
+
+console.log(greet("Coder"));`,
+  },
+  {
+    title: 'Hello World and Count',
+    language: 'Go',
+    description: 'Go basics: print text and loop from 1 to 5.',
+    code: `package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+    for i := 1; i <= 5; i++ {
+        fmt.Println(i)
+    }
+}`,
+  },
+  {
+    title: 'Check Even Number',
+    language: 'Rust',
+    description: 'Rust basics: functions, if-else, and the % operator.',
+    code: `fn is_even(n: i32) -> bool {
+    n % 2 == 0
+}
+
+fn main() {
+    let num = 8;
+    if is_even(num) {
+        println!("{} is even", num);
+    } else {
+        println!("{} is odd", num);
+    }
+}`,
+  },
+  {
+    title: 'Simple Calculator',
+    language: 'Java',
+    description: 'Practice if-else with a tiny + - * / calculator.',
+    code: `public class Calculator {
+    public static void main(String[] args) {
+        double a = 10, b = 3;
+        char op = '+';
+        double result = 0;
+
+        if (op == '+') result = a + b;
+        else if (op == '-') result = a - b;
+        else if (op == '*') result = a * b;
+        else if (op == '/') result = a / b;
+
+        System.out.println("Result: " + result);
+    }
+}`,
+  },
+  {
+    title: 'Create a Students Table',
+    language: 'MySQL',
+    description: 'Your first table: id, name, and age columns.',
+    code: `CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    age INT
+);`,
+  },
+  {
+    title: 'Styled Button with Hover',
+    language: 'CSS',
+    description: 'Make a button look good with padding, color, and hover.',
+    code: `.my-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+.my-btn:hover {
+    background: #45a049;
+}`,
+  },
+  {
+    title: 'Basic Web Page Skeleton',
+    language: 'HTML',
+    description: 'The smallest complete web page every beginner should know.',
+    code: `<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Page</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is my first web page.</p>
+</body>
+</html>`,
+  },
+  {
+    title: 'Count Vowels',
+    language: 'Python',
+    description: 'Loop over a string and count a, e, i, o, u.',
+    code: `text = "coders hub"
+vowels = "aeiou"
+count = 0
+
+for ch in text.lower():
+    if ch in vowels:
+        count += 1
+
+print("Vowels:", count)`,
+  },
+  {
+    title: 'FizzBuzz',
+    language: 'Python',
+    description: 'The classic interview warm-up: multiples of 3, 5, and both.',
+    code: `for i in range(1, 16):
+    if i % 3 == 0 and i % 5 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)`,
   },
 ];
