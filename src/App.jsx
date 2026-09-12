@@ -3,7 +3,6 @@ import LandingPage from './pages/LandingPage';
 import MenuPage from './pages/MenuPage';
 import LearningPathsPage from './pages/LearningPathsPage';
 import SnippetsPage from './pages/SnippetsPage';
-import SubmitPage from './pages/SubmitPage';
 import AuthPage from './pages/AuthPage';
 
 export default function App() {
@@ -14,7 +13,6 @@ export default function App() {
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/learning-paths" element={<LearningPathsPage />} />
         <Route path="/snippets" element={<SnippetsPage />} />
-        <Route path="/submit" element={<SubmitPage />} />
         <Route path="/login" element={<AuthPage />} />
         <Route path="*" element={<LandingPage />} />
       </Routes>

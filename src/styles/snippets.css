@@ -263,6 +263,43 @@ a {
     line-height: 1.5;
 }
 
+.snippets-page .code-block {
+    position: relative;
+}
+
+.snippets-page .copy-btn {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: .35rem .65rem;
+    color: #ccc;
+    background: rgba(30, 30, 30, .9);
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .25s ease, color .25s ease, background .25s ease;
+}
+
+.snippets-page .copy-btn:hover {
+    border-color: var(--green);
+    color: #fff;
+}
+
+.snippets-page .copy-btn.copied {
+    border-color: var(--green);
+    color: #fff;
+    background: var(--green);
+}
+
+.snippets-page .code-block pre {
+    padding-top: 2.75rem;
+}
+
 pre {
     width: 100%;
     max-width: 100%;

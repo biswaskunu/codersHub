@@ -9,7 +9,9 @@ CODER'S HUB is a frontend-only coding resource project, now built with **React 1
 - Plain CSS per page (migrated from the legacy vanilla stylesheets)
 - Font Awesome (CDN, loaded in `index.html`)
 
-No backend has been introduced. Snippet submissions are persisted to `localStorage`.
+No backend has been introduced. The "Submit a Snippet" button opens a
+pre-filled Gmail compose window to `kunubiswas2@gmail.com` instead of an
+internal form.
 
 ## Scripts
 
@@ -27,8 +29,7 @@ npm run preview  # preview production build
 | `/` | Landing | `src/pages/LandingPage.jsx` |
 | `/menu` | Main menu + features | `src/pages/MenuPage.jsx` |
 | `/learning-paths` | Searchable learning paths + roadmap modal | `src/pages/LearningPathsPage.jsx` |
-| `/snippets` | Searchable/filterable snippet library | `src/pages/SnippetsPage.jsx` |
-| `/submit` | Snippet submission form | `src/pages/SubmitPage.jsx` |
+| `/snippets` | Searchable/filterable snippet library (copy button per snippet, Gmail submit) | `src/pages/SnippetsPage.jsx` |
 | `/login` | Login / Register UI | `src/pages/AuthPage.jsx` |
 
 ## Structured folders
@@ -48,7 +49,7 @@ src/
   data/                 # roadmaps.js, snippets.js
   pages/                # one component per route
   styles/               # landing.css, menu.css, learning-paths.css,
-                        # snippets.css, submit.css, auth.css
+                        # snippets.css, auth.css
 legacy/                 # original vanilla HTML/CSS/JS (reference only)
 ```
 

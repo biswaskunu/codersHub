@@ -1,10 +1,31 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { snippets, snippetLanguages } from '../data/snippets';
 import SnippetCard, { FilterChips } from '../components/snippets/SnippetCard';
 import { SimpleHeader } from '../components/layout/SiteHeader';
 import Footer from '../components/layout/Footer';
 import '../styles/snippets.css';
+
+const SUBMIT_EMAIL = 'kunubiswas2@gmail.com';
+const SUBMIT_SUBJECT = 'New Code Snippet Submission';
+const SUBMIT_BODY = `Hi,
+
+I would like to submit a code snippet:
+
+Title:
+Language:
+Description:
+
+Code:
+\`\`\`
+(paste your code here)
+\`\`\`
+
+Thanks!`;
+
+const GMAIL_COMPOSE_URL =
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SUBMIT_EMAIL)}` +
+  `&su=${encodeURIComponent(SUBMIT_SUBJECT)}` +
+  `&body=${encodeURIComponent(SUBMIT_BODY)}`;
 
 export default function SnippetsPage() {
   const [query, setQuery] = useState('');
@@ -35,9 +56,15 @@ export default function SnippetsPage() {
               A growing collection of useful code snippets contributed by the community. Share and
               save your own!
             </p>
-            <Link to="/submit" className="submit-btn">
+            <a
+              href={GMAIL_COMPOSE_URL}
+              className="submit-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Send your snippet to ${SUBMIT_EMAIL} via Gmail`}
+            >
               Submit a Snippet
-            </Link>
+            </a>
           </div>
         </section>
 
